@@ -1,0 +1,37 @@
+{
+  "name": "todo_challenge",
+  "version": "1.0.0",
+  "description": "Instructions 1. Clone repo 2. `bower install` # Todo Challenge",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmabeynon/todo_challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmabeynon/todo_challenge/issues"
+  },
+  "homepage": "https://github.com/emmabeynon/todo_challenge#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.12.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.3",
+    "protractor": "^3.0.0"
+  },
+  "dependencies": {
+    "http-server": "^0.8.5"
+  }
+}
