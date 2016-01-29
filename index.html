@@ -39,17 +39,15 @@
           <ul class="list-unstyled">
             <li ng-repeat="task in toDoCtrl.tasks">
               <div ng-hide="toDoCtrl.editorEnabled">
-                <i class="glyphicon glyphicon-unchecked"></i>
-                {{task}}
-                <a href="#" ng-click="toDoCtrl.enableEditor(task)"><i class="glyphicon glyphicon-edit"></i></a>
-                <a href="#"><i class="glyphicon glyphicon-bin"></i></a>
+                <a href="#" class="glyphicon glyphicon-unchecked" ng-click=></a>
+                {{task.task}}
+                <a href="#" ng-click="toDoCtrl.enableEditor(task.task)" class="glyphicon glyphicon-edit"></a>
+                <a href="#" class="glyphicon glyphicon-bin"></a>
               </div>
               <div ng-show="toDoCtrl.editorEnabled">
                 <input ng-model="toDoCtrl.editableTask" ng-show="toDoCtrl.editorEnabled">
-                <a href="#" ng-click="toDoCtrl.editTask()"><i class="glyphicon glyphicon-ok"></i></a>
-                <a href="#" ng-click="toDoCtrl.disableEditor()">
-                  <i class="glyphicon glyphicon-remove"></i>
-                </a>
+                <a href="#" ng-click="toDoCtrl.editTask()" class="glyphicon glyphicon-ok"></a>
+                <a href="#" ng-click="toDoCtrl.disableEditor()" class="glyphicon glyphicon-remove"></a>
               </div>
             </li>
           </ul>

@@ -6,14 +6,14 @@ toDoList.controller('ToDoListController', function() {
   self.editorEnabled = false;
 
   self.addTask = function() {
-    self.tasks.push(self.newTask);
+    self.tasks.push({task: self.newTask, completed: false});
     self.newTask = null;
   };
 
   self.enableEditor = function(task) {
     self.editorEnabled = true;
     self.editableTask = task;
-    self.index = self.tasks.indexOf(task);
+    self.task = task;
   };
 
   self.disableEditor = function() {
@@ -21,9 +21,11 @@ toDoList.controller('ToDoListController', function() {
   };
 
   self.editTask = function() {
-    self.task = self.editableTask
-    self.tasks.splice(self.index)
-    self.tasks.splice(self.index, 0, self.task)
+    for(var i = 0; i < self.tasks.length; i++) {
+      if (self.tasks[i].task === self.task) {
+        self.tasks[i].task = self.editableTask;
+      }
+    }
     self.disableEditor();
   };
 });

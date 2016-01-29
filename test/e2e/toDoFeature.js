@@ -40,11 +40,28 @@ describe('ToDo', function() {
       taskEntryBox.sendKeys('First task');
       taskEntryButton.click();
       taskEditLink.click();
-      taskEditTaskBox.sendKeys('A task');
+      taskEditTaskBox.sendKeys(' edited');
       taskEditTaskComplete.click();
 
-      var tasks = element.all(by.repeater(''));
-      expect(tasks.get(0).getText()).toContain('A task');
+      var tasks = element.all(by.repeater('task in toDoCtrl.tasks'));
+      expect(tasks.get(0).getText()).toContain('First task edited');
+    });
+  });
+  // As a person who actually gets stuff done
+  // I want to mark my tasks as done
+  // So that I don't do them twice
+  describe('Completing tasks', function() {
+    var taskEntryBox = element(by.css('#taskEntryBox'));;
+    var taskEntryButton = element(by.className("btn-success"));
+    var taskCheckBox = element(by.className("glyphicon-unchecked"));
+
+    it('allows user to mark a task as \'done\'', function() {
+      taskEntryBox.sendKeys('Another task');
+      taskEntryButton.click();
+      taskCheckBox.click();
+      var checkedBox = element(by.css('.glyphicon-check'));
+      // var tasks = element.all(by.repeater('task in toDoCtrl.tasks'));
+      expect(checkedBox.isPresent()).toBeTruthy();
     });
   });
 });
