@@ -30,15 +30,11 @@ describe('ToDo', function() {
   // entries)
   // So that I have more time to think about other things
   describe('Editing tasks', function() {
-    var taskEntryBox = element(by.css('#taskEntryBox'));;
-    var taskEntryButton = element(by.className("btn-success"));
     var taskEditLink = element(by.className("glyphicon-edit"));
     var taskEditTaskBox = element(by.model("toDoCtrl.editableTask"));
     var taskEditTaskComplete = element(by.className("glyphicon-ok"));
 
     it('allows user to edit a task', function() {
-      taskEntryBox.sendKeys('First task');
-      taskEntryButton.click();
       taskEditLink.click();
       taskEditTaskBox.sendKeys(' edited');
       taskEditTaskComplete.click();
@@ -51,17 +47,17 @@ describe('ToDo', function() {
   // I want to mark my tasks as done
   // So that I don't do them twice
   describe('Completing tasks', function() {
-    var taskEntryBox = element(by.css('#taskEntryBox'));;
-    var taskEntryButton = element(by.className("btn-success"));
-    var taskCheckBox = element(by.className("glyphicon-unchecked"));
+    var taskUncheckedBox = element(by.className("glyphicon-unchecked"));
+    var taskCheckedBox = element(by.css('.glyphicon-check'));
 
     it('allows user to mark a task as \'done\'', function() {
-      taskEntryBox.sendKeys('Another task');
-      taskEntryButton.click();
-      taskCheckBox.click();
-      var checkedBox = element(by.css('.glyphicon-check'));
-      // var tasks = element.all(by.repeater('task in toDoCtrl.tasks'));
-      expect(checkedBox.isPresent()).toBeTruthy();
+      taskUncheckedBox.click();
+      expect(taskCheckedBox.isPresent()).toBeTruthy();
+    });
+
+    it('allows user unmark a \'done\' task', function() {
+      taskCheckedBox.click();
+      expect(taskUncheckedBox.isPresent()).toBeTruthy();
     });
   });
 });
