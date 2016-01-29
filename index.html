@@ -32,11 +32,26 @@
         </form>
       </div>
     </div>
+    <p>
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <ul class="list-unstyled">
-            <li ng-repeat="task in toDoCtrl.tasks">{{task}}</li>
+            <li ng-repeat="task in toDoCtrl.tasks">
+              <div ng-hide="toDoCtrl.editorEnabled">
+                <i class="glyphicon glyphicon-unchecked"></i>
+                {{task}}
+                <a href="#" ng-click="toDoCtrl.enableEditor(task)"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="#"><i class="glyphicon glyphicon-bin"></i></a>
+              </div>
+              <div ng-show="toDoCtrl.editorEnabled">
+                <input ng-model="toDoCtrl.editableTask" ng-show="toDoCtrl.editorEnabled">
+                <a href="#" ng-click="toDoCtrl.editTask()"><i class="glyphicon glyphicon-ok"></i></a>
+                <a href="#" ng-click="toDoCtrl.disableEditor()">
+                  <i class="glyphicon glyphicon-remove"></i>
+                </a>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

@@ -17,4 +17,15 @@ describe('ToDoListController', function(){
       expect(ctrl.tasks).toContain('My first task');
     });
   });
+
+  describe('#editTask', function() {
+    it('edits a task', function() {
+      ctrl.newTask = 'My first task'
+      ctrl.addTask();
+      ctrl.editableTask = 'My edited task'
+      ctrl.index = 0;
+      ctrl.editTask();
+      expect(ctrl.tasks[0]).toEqual('My edited task');
+    });
+  });
 });
