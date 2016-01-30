@@ -72,3 +72,7 @@ Approach
 
 Further Work
 -------------
+* User can delete tasks
+* Style tasks so that edit and delete icons are aligned
+* Remove a href underline
+* Bug - multiple input boxes appear when editing

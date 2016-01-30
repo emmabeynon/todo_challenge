@@ -4,6 +4,7 @@ toDoList.controller('ToDoListController', function() {
   self.tasks = [];
   self.task = null;
   self.editorEnabled = false;
+  self.filters = {};
 
   self.addTask = function() {
     self.tasks.push({task: self.newTask, completed: false});
