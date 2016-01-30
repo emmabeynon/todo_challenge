@@ -12,6 +12,7 @@ describe('ToDo', function() {
   var completeFilter = element(by.linkText("Complete"));
   var allFilter = element(by.linkText("All"));
   var tasks = element.all(by.repeater('task in toDoCtrl.tasks'));
+  var taskCount = element(by.css("#task-count"));
 
   it('has a title', function() {
     browser.get('http://localhost:8080');
@@ -95,6 +96,15 @@ describe('ToDo', function() {
     it('allows user to delete a task', function() {
       taskDeleteLink.click();
       expect(tasks.get(1)).not.toContain('Second task');
+    });
+  });
+
+  // As a person who doesn't like counting by hand
+  // I want to see a total number of tasks
+  // So that I don't have to count
+  describe('Task count', function() {
+    it('displays the total number of tasks', function() {
+      expect(taskCount.getText()).toContain('Task Count: 1');
     });
   });
 });
