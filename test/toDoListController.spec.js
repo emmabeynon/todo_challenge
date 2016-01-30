@@ -28,4 +28,15 @@ describe('ToDoListController', function(){
       expect(ctrl.tasks[0].task).toEqual('My edited task');
     });
   });
+
+  describe('#deleteTask', function() {
+    it('deletes a task', function() {
+      ctrl.newTask = 'My first task'
+      ctrl.addTask();
+      ctrl.newTask = 'My second task'
+      ctrl.addTask();
+      ctrl.deleteTask('My first task');
+      expect(ctrl.tasks[0].task).not.toBe('My first task');
+    });
+  });
 });

@@ -2,6 +2,7 @@ describe('ToDo', function() {
   var taskEntryBox = element(by.css('#taskEntryBox'));
   var taskEntryButton = element(by.className("btn-success"));
   var taskEditLink = element(by.className("glyphicon-edit"));
+  var taskDeleteLink = element(by.className("glyphicon-trash"));
   var taskEditTaskBox = element(by.model("toDoCtrl.editableTask"));
   var taskEditTaskComplete = element(by.className("glyphicon-ok"));
   var taskUncheckedBox = element(by.className("glyphicon-unchecked"));
@@ -10,6 +11,7 @@ describe('ToDo', function() {
   var secondTaskUnchecked = element.all(by.repeater('task in toDoCtrl.tasks')).get(1).element(by.className('glyphicon-unchecked'));
   var completeFilter = element(by.linkText("Complete"));
   var allFilter = element(by.linkText("All"));
+  var tasks = element.all(by.repeater('task in toDoCtrl.tasks'));
 
   it('has a title', function() {
     browser.get('http://localhost:8080');
@@ -86,6 +88,13 @@ describe('ToDo', function() {
       allFilter.click();
       expect((taskCheckedBox).isPresent()).toBeTruthy;
       expect((taskUncheckedBox).isPresent()).toBeTruthy;
+    });
+  });
+
+  describe('deleting tasks', function() {
+    it('allows user to delete a task', function() {
+      taskDeleteLink.click();
+      expect(tasks.get(1)).not.toContain('Second task');
     });
   });
 });

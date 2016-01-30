@@ -29,4 +29,12 @@ toDoList.controller('ToDoListController', function() {
     }
     self.disableEditor();
   };
+
+  self.deleteTask = function(task) {
+    for(var i = 0; i < self.tasks.length; i++) {
+      if (self.tasks[i].task === task) {
+        self.tasks.splice(self.tasks[i],1);
+      }
+    }
+  };
 });
