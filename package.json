@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "karma start test/karma.conf.js",
+    "start": "http-server -a 127.0.0.1 -p 8080"
   },
   "repository": {
     "type": "git",
