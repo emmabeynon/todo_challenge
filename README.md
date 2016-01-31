@@ -53,6 +53,8 @@ So I never see them again
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
 * Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
 
+
+![To Do List](http://i.imgur.com/ElX56st.png)
 Instructions
 ------------
 1. Fork repo and clone to your local machine.
