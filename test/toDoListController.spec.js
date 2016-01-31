@@ -39,4 +39,21 @@ describe('ToDoListController', function(){
       expect(ctrl.tasks[0].task).not.toBe('My first task');
     });
   });
+
+  describe('#enableEditor', function() {
+    it('allows view to use inline task editing', function() {
+      var task = "Task";
+      ctrl.enableEditor(task);
+      expect(ctrl.editorEnabled).toBeTruthy();
+      expect(ctrl.editableTask).toEqual(task);
+      expect(ctrl.task).toEqual(task);
+    });
+  });
+
+  describe('#disableEditor', function() {
+    it('prevents view from using inline task editing', function() {
+      ctrl.disableEditor();
+      expect(ctrl.editorEnabled).toBeFalsy();
+    });
+  });
 });

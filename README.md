@@ -11,8 +11,7 @@ This is my submission for the Makers Academy Week 8 Weekend Challenge: https://g
 
 
 Brief
----------
-
+------
 Build a Todo list as a mini front-end application. You don't have to use a database, the front-end is more important - you can use an appropriate data structure stored somewhere in your JavaScript (this time only!)
 
 Here are the core user stories:
@@ -53,8 +52,10 @@ So I never see them again
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
 * Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
 
-
+App Screenshot
+---------------
 ![To Do List](http://i.imgur.com/ElX56st.png)
+
 Instructions
 ------------
 1. Fork repo and clone to your local machine.
