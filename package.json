@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "http-server -a 127.0.0.1 -p 8080"
+    "start": "http-server -a 127.0.0.1 -p 8080",
+    "postinstall": "bower cache clean && bower install"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/emmabeynon/todo_challenge#readme",
   "devDependencies": {
+    "bower": "^1.7.7",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
